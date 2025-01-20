@@ -71,14 +71,42 @@ export default function Home() {
 
           <section>
             <h2 className="text-2xl font-bold mb-4">Projects</h2>
-            <ul className="space-y-2 list-disc list-inside">
-              <li className="text-lg">instru.lol</li>
-              <li className="text-lg">share-character-ai</li>
-              <li className="text-lg">textSQL</li>
-              <li className="text-lg">ScholarSearch</li>
-              <li className="text-lg">hft-systems-monitoring</li>
-              <li className="text-lg">go-compiler</li>
-            </ul>
+            <div className="space-y-8">
+              <div className="border-l-4 border-gray-300 pl-4 dark:border-gray-600">
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-xl font-semibold">Interconnected</h3>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Feb 2024</span>
+                </div>
+                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">SwiftUI, CoreGraphics, Combine</div>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>Developed an interactive Swift application in a course-like format to introduce various graph theory algorithms.</li>
+                  <li>Built a custom physics simulation to simulate the movements of a force-directed and circular graph.</li>
+                  <li>Leveraged SwiftUI and state management to build a graph playground with an interactive graph where the user can drag/add/delete nodes.</li>
+                </ul>
+              </div>
+              <div className="border-l-4 border-gray-300 pl-4 dark:border-gray-600">
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-xl font-semibold">TravoAI</h3>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">June 2023</span>
+                </div>
+                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">React.js, Node.js, Open AI API</div>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>Developed a full-stack web application to draft an AI generated travel plan for users based on their preferences.</li>
+                  <li>Implemented a backend service to call the chat completions endpoint of the OpenAI API with the gpt-3.5-turbo model and stream data to the frontend.</li>
+                  <li>Leveraged React and TailwindCSS to build a landing page and other key components.</li>
+                </ul>
+              </div>
+              <div className="border-l-4 border-gray-300 pl-4 dark:border-gray-600">
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-xl font-semibold">Trackr - Manage Assignments</h3>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">October 2019</span>
+                </div>
+                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">UIKit, CoreData, SiriKit</div>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>iOS app to help students manage their homework assignments in a minimal UI, amassing tens of thousands of downloads on the iOS App Store.</li>
+                </ul>
+              </div>
+            </div>
           </section>
         </header>
       </div>
