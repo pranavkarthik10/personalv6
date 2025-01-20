@@ -50,8 +50,8 @@ export default function Home() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">About</h2>
             <p className="text-lg leading-relaxed">
-              Hey, I'm Pranav, a third year CS student at the University of British Columbia.
-              I'm passionate about software engineering, primarily in building experiences for the web, mobile, and spatial interfaces.
+              Hey, I&apos;m Pranav, a third year CS student at the University of British Columbia.
+              I&apos;m passionate about software engineering, primarily in building experiences for the web, mobile, and spatial interfaces.
             </p>
           </section>
 
