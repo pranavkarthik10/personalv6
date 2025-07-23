@@ -59,6 +59,10 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-4">Work Experience</h2>
             <ul className="space-y-4">
               <li className="flex flex-col sm:flex-row sm:justify-between">
+                <div className="font-medium">SWE Intern, Google</div>
+                <div className="text-gray-600">May 2025 - Aug 2025</div>
+              </li>
+              <li className="flex flex-col sm:flex-row sm:justify-between">
                 <div className="font-medium">STEP Intern, Google</div>
                 <div className="text-gray-600">May 2024 - Aug 2024</div>
               </li>
