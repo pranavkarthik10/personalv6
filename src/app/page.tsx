@@ -89,6 +89,15 @@ export default function Home() {
           <div className="space-y-8">
             <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">SWE Intern</h3>
+                <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-green-500/20 text-green-200' : 'bg-green-100 text-green-700'}`}>
+                  May 2025 - Aug 2025
+                </span>
+              </div>
+              <p className={`text-lg font-medium mb-2 ${theme === 'dark' ? 'text-green-300' : 'text-green-600'}`}>Google</p>
+            </div>
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
                 <h3 className="text-2xl font-semibold mb-2 sm:mb-0">STEP Intern</h3>
                 <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-purple-500/20 text-purple-200' : 'bg-purple-100 text-purple-700'}`}>
                   May 2024 - Aug 2024
