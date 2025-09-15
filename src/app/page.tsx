@@ -3,112 +3,157 @@ import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 
 export default function Home() {
-
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
-
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen transition-all duration-500 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100'}`}>
+      {/* Background glow effects */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl opacity-20 ${theme === 'dark' ? 'bg-purple-500' : 'bg-blue-400'}`}></div>
+        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl opacity-20 ${theme === 'dark' ? 'bg-pink-500' : 'bg-indigo-400'}`}></div>
+      </div>
+
       <button
         onClick={toggleTheme}
-        className="fixed top-4 right-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
+        className="fixed top-6 right-6 p-3 rounded-full backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 z-50"
         aria-label="Toggle theme"
       >
-        {theme === 'light' ? <Moon size={24} /> : <Sun size={24} />}
+        {theme === 'light' ? <Moon size={20} className="text-slate-700" /> : <Sun size={20} className="text-yellow-400" />}
       </button>
 
-      <div className="max-w-3xl mx-auto px-6 py-12 font-sans">
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold mb-8">Pranav Karthik</h1>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-20">
+        <header className="text-center mb-20">
+          {/* Name with gradient text */}
+          <h1 className={`text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent ${theme === 'dark' ? 'drop-shadow-[0_0_30px_rgba(147,51,234,0.3)]' : 'drop-shadow-[0_0_20px_rgba(147,51,234,0.2)]'}`}>
+            Pranav Karthik
+          </h1>
+          
+          {/* Role tags */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <span className={`px-6 py-2 rounded-full text-sm font-medium backdrop-blur-md border ${theme === 'dark' ? 'bg-purple-500/20 text-purple-200 border-purple-400/30' : 'bg-blue-500/20 text-blue-700 border-blue-400/30'}`}>
+              software engineer
+            </span>
+            <span className={`px-6 py-2 rounded-full text-sm font-medium backdrop-blur-md border ${theme === 'dark' ? 'bg-pink-500/20 text-pink-200 border-pink-400/30' : 'bg-indigo-500/20 text-indigo-700 border-indigo-400/30'}`}>
+              designer
+            </span>
+            <span className={`px-6 py-2 rounded-full text-sm font-medium backdrop-blur-md border ${theme === 'dark' ? 'bg-blue-500/20 text-blue-200 border-blue-400/30' : 'bg-purple-500/20 text-purple-700 border-purple-400/30'}`}>
+              researcher
+            </span>
+          </div>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Contact</h2>
-            <div className="space-y-2">
-              <a href="mailto:pmruthyu@student.ubc.ca" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
-                <Mail size={20} />
-                pmruthyu@student.ubc.ca
-              </a>
-              <a href="https://linkedin.com/in/pranav-karthik" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
-                <Linkedin size={20} />
-                pranav-karthik
-              </a>
-              <a href="https://github.com/pranavkarthik10" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
-                <Github size={20} />
-                pranavkarthik10
-              </a>
-            </div>
-          </section>
+          {/* About section */}
+          <p className={`text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-16 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
+            Hey, I&apos;m Pranav, a fourth year CS student at the University of British Columbia.
+            I&apos;m passionate about software engineering, primarily in building experiences for the web, mobile, and spatial interfaces.
+          </p>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">About</h2>
-            <p className="text-lg leading-relaxed">
-              Hey, I&apos;m Pranav, a third year CS student at the University of British Columbia.
-              I&apos;m passionate about software engineering, primarily in building experiences for the web, mobile, and spatial interfaces.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Work Experience</h2>
-            <ul className="space-y-4">
-              <li className="flex flex-col sm:flex-row sm:justify-between">
-                <div className="font-medium">STEP Intern, Google</div>
-                <div className="text-gray-600">May 2024 - Aug 2024</div>
-              </li>
-              <li className="flex flex-col sm:flex-row sm:justify-between">
-                <div className="font-medium">Software Engineer Intern, DYNE</div>
-                <div className="text-gray-600">May 2023 - Aug 2023</div>
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Projects</h2>
-            <div className="space-y-8">
-              <div className="border-l-4 border-gray-300 pl-4 dark:border-gray-600">
-                <div className="flex justify-between items-baseline">
-                  <h3 className="text-xl font-semibold">Interconnected</h3>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Feb 2024</span>
-                </div>
-                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">SwiftUI, CoreGraphics, Combine</div>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Developed an interactive Swift application in a course-like format to introduce various graph theory algorithms.</li>
-                  <li>Built a custom physics simulation to simulate the movements of a force-directed and circular graph.</li>
-                  <li>Leveraged SwiftUI and state management to build a graph playground with an interactive graph where the user can drag/add/delete nodes.</li>
-                </ul>
-              </div>
-              <div className="border-l-4 border-gray-300 pl-4 dark:border-gray-600">
-                <div className="flex justify-between items-baseline">
-                  <h3 className="text-xl font-semibold">TravoAI</h3>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">June 2023</span>
-                </div>
-                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">React.js, Node.js, Open AI API</div>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Developed a full-stack web application to draft an AI generated travel plan for users based on their preferences.</li>
-                  <li>Implemented a backend service to call the chat completions endpoint of the OpenAI API with the gpt-3.5-turbo model and stream data to the frontend.</li>
-                  <li>Leveraged React and TailwindCSS to build a landing page and other key components.</li>
-                </ul>
-              </div>
-              <div className="border-l-4 border-gray-300 pl-4 dark:border-gray-600">
-                <div className="flex justify-between items-baseline">
-                  <h3 className="text-xl font-semibold">Trackr - Manage Assignments</h3>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">October 2019</span>
-                </div>
-                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">UIKit, CoreData, SiriKit</div>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>iOS app to help students manage their homework assignments in a minimal UI, amassing tens of thousands of downloads on the iOS App Store.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+          {/* Contact links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-20">
+            <a 
+              href="mailto:pmruthyu@student.ubc.ca" 
+              className={`flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-105 ${theme === 'dark' ? 'bg-white/10 text-white border-white/20 hover:bg-white/20' : 'bg-black/5 text-slate-700 border-slate-200 hover:bg-black/10'}`}
+            >
+              <Mail size={20} />
+              <span className="font-medium">email</span>
+            </a>
+            <a 
+              href="https://linkedin.com/in/pranav-karthik" 
+              className={`flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-105 ${theme === 'dark' ? 'bg-white/10 text-white border-white/20 hover:bg-white/20' : 'bg-black/5 text-slate-700 border-slate-200 hover:bg-black/10'}`}
+            >
+              <Linkedin size={20} />
+              <span className="font-medium">linkedin</span>
+            </a>
+            <a 
+              href="https://github.com/pranavkarthik10" 
+              className={`flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-105 ${theme === 'dark' ? 'bg-white/10 text-white border-white/20 hover:bg-white/20' : 'bg-black/5 text-slate-700 border-slate-200 hover:bg-black/10'}`}
+            >
+              <Github size={20} />
+              <span className="font-medium">github</span>
+            </a>
+          </div>
         </header>
+
+        {/* Work Experience */}
+        <section className="mb-20">
+          <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>
+            Experience
+          </h2>
+          <div className="space-y-8">
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">STEP Intern</h3>
+                <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-purple-500/20 text-purple-200' : 'bg-purple-100 text-purple-700'}`}>
+                  May 2024 - Aug 2024
+                </span>
+              </div>
+              <p className={`text-lg font-medium mb-2 ${theme === 'dark' ? 'text-purple-300' : 'text-purple-600'}`}>Google</p>
+            </div>
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">Software Engineer Intern</h3>
+                <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-pink-500/20 text-pink-200' : 'bg-pink-100 text-pink-700'}`}>
+                  May 2023 - Aug 2023
+                </span>
+              </div>
+              <p className={`text-lg font-medium mb-2 ${theme === 'dark' ? 'text-pink-300' : 'text-pink-600'}`}>DYNE</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section>
+          <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>
+            Projects
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] group ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-semibold">Interconnected</h3>
+                <span className={`text-xs font-medium px-2 py-1 rounded-full ${theme === 'dark' ? 'bg-blue-500/20 text-blue-200' : 'bg-blue-100 text-blue-700'}`}>
+                  Feb 2024
+                </span>
+              </div>
+              <p className={`text-sm mb-4 ${theme === 'dark' ? 'text-blue-300' : 'text-blue-600'}`}>SwiftUI, CoreGraphics, Combine</p>
+              <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
+                Interactive Swift application introducing graph theory algorithms with custom physics simulation and drag-and-drop graph playground.
+              </p>
+            </div>
+
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] group ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-semibold">TravoAI</h3>
+                <span className={`text-xs font-medium px-2 py-1 rounded-full ${theme === 'dark' ? 'bg-green-500/20 text-green-200' : 'bg-green-100 text-green-700'}`}>
+                  June 2023
+                </span>
+              </div>
+              <p className={`text-sm mb-4 ${theme === 'dark' ? 'text-green-300' : 'text-green-600'}`}>React.js, Node.js, OpenAI API</p>
+              <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
+                Full-stack web application for AI-generated travel plans with streaming responses and modern React UI.
+              </p>
+            </div>
+
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] group ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-semibold">Trackr</h3>
+                <span className={`text-xs font-medium px-2 py-1 rounded-full ${theme === 'dark' ? 'bg-orange-500/20 text-orange-200' : 'bg-orange-100 text-orange-700'}`}>
+                  Oct 2019
+                </span>
+              </div>
+              <p className={`text-sm mb-4 ${theme === 'dark' ? 'text-orange-300' : 'text-orange-600'}`}>UIKit, CoreData, SiriKit</p>
+              <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
+                iOS app for assignment management with tens of thousands of App Store downloads and Siri integration.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
