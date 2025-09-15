@@ -23,40 +23,40 @@ export default function Home() {
 
       <button
         onClick={toggleTheme}
-        className="fixed top-6 right-6 p-3 rounded-full backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 z-50"
+        className="fixed top-6 right-6 p-3 rounded-full backdrop-blur-md bg-white/20 dark:bg-black/20 border border-white/30 dark:border-white/20 hover:bg-white/30 dark:hover:bg-black/30 transition-all duration-300 z-50 shadow-lg"
         aria-label="Toggle theme"
       >
-        {theme === 'light' ? <Moon size={20} className="text-slate-700" /> : <Sun size={20} className="text-yellow-400" />}
+        {theme === 'light' ? <Moon size={20} className="text-slate-800" /> : <Sun size={20} className="text-yellow-300" />}
       </button>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-20">
-        <header className="text-center mb-20">
-          {/* Name with gradient text */}
-          <h1 className={`text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent ${theme === 'dark' ? 'drop-shadow-[0_0_30px_rgba(147,51,234,0.3)]' : 'drop-shadow-[0_0_20px_rgba(147,51,234,0.2)]'}`}>
+        <header className="mb-20">
+          {/* Name with black text */}
+          <h1 className={`text-6xl md:text-7xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             Pranav Karthik
           </h1>
           
           {/* Role tags */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap gap-4 mb-12">
             <span className={`px-6 py-2 rounded-full text-sm font-medium backdrop-blur-md border ${theme === 'dark' ? 'bg-purple-500/20 text-purple-200 border-purple-400/30' : 'bg-blue-500/20 text-blue-700 border-blue-400/30'}`}>
               software engineer
             </span>
             <span className={`px-6 py-2 rounded-full text-sm font-medium backdrop-blur-md border ${theme === 'dark' ? 'bg-pink-500/20 text-pink-200 border-pink-400/30' : 'bg-indigo-500/20 text-indigo-700 border-indigo-400/30'}`}>
-              designer
+              builder
             </span>
             <span className={`px-6 py-2 rounded-full text-sm font-medium backdrop-blur-md border ${theme === 'dark' ? 'bg-blue-500/20 text-blue-200 border-blue-400/30' : 'bg-purple-500/20 text-purple-700 border-purple-400/30'}`}>
-              researcher
+              tinkerer
             </span>
           </div>
 
           {/* About section */}
-          <p className={`text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-16 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
+          <p className={`text-xl md:text-2xl leading-relaxed max-w-3xl mb-16 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
             Hey, I&apos;m Pranav, a fourth year CS student at the University of British Columbia.
-            I&apos;m passionate about software engineering, primarily in building experiences for the web, mobile, and spatial interfaces.
+            I&apos;m passionate about building experiences for the web, mobile, and spatial interfaces.
           </p>
 
           {/* Contact links */}
-          <div className="flex flex-wrap justify-center gap-6 mb-20">
+          <div className="flex flex-wrap gap-6 mb-20">
             <a 
               href="mailto:pmruthyu@student.ubc.ca" 
               className={`flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-105 ${theme === 'dark' ? 'bg-white/10 text-white border-white/20 hover:bg-white/20' : 'bg-black/5 text-slate-700 border-slate-200 hover:bg-black/10'}`}
@@ -83,13 +83,22 @@ export default function Home() {
 
         {/* Work Experience */}
         <section className="mb-20">
-          <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>
+          <h2 className={`text-3xl font-bold mb-12 ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>
             Experience
           </h2>
           <div className="space-y-8">
             <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">SWE Intern</h3>
+                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">Software Engineering Intern</h3>
+                <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-blue-500/20 text-blue-200' : 'bg-blue-100 text-blue-700'}`}>
+                  Sep 2025 - Present
+                </span>
+              </div>
+              <p className={`text-lg font-medium mb-2 ${theme === 'dark' ? 'text-blue-300' : 'text-blue-600'}`}>Vercel</p>
+            </div>
+            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">Software Engineering Intern</h3>
                 <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-green-500/20 text-green-200' : 'bg-green-100 text-green-700'}`}>
                   May 2025 - Aug 2025
                 </span>
@@ -119,7 +128,7 @@ export default function Home() {
 
         {/* Projects */}
         <section>
-          <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>
+          <h2 className={`text-3xl font-bold mb-12 ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>
             Projects
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
