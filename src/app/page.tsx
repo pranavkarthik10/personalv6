@@ -116,7 +116,7 @@ export default function Home() {
             </div>
             <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">Software Engineer Intern</h3>
+                <h3 className="text-2xl font-semibold mb-2 sm:mb-0">App Development Intern</h3>
                 <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-pink-500/20 text-pink-200' : 'bg-pink-100 text-pink-700'}`}>
                   May 2023 - Aug 2023
                 </span>
