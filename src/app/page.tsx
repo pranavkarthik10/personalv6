@@ -87,7 +87,7 @@ export default function Home() {
             Experience
           </h2>
           <div className="space-y-8">
-            <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
+            {/* <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
                 <h3 className="text-2xl font-semibold mb-2 sm:mb-0">Software Engineering Intern</h3>
                 <span className={`text-sm font-medium px-3 py-1 rounded-full ${theme === 'dark' ? 'bg-blue-500/20 text-blue-200' : 'bg-blue-100 text-blue-700'}`}>
@@ -95,7 +95,7 @@ export default function Home() {
                 </span>
               </div>
               <p className={`text-lg font-medium mb-2 ${theme === 'dark' ? 'text-blue-300' : 'text-blue-600'}`}>Vercel</p>
-            </div>
+            </div> */}
             <div className={`p-8 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-[1.02] ${theme === 'dark' ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-white/50 border-white/20 hover:bg-white/70'}`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
                 <h3 className="text-2xl font-semibold mb-2 sm:mb-0">Software Engineering Intern</h3>
