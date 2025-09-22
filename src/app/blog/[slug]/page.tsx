@@ -103,9 +103,9 @@ async function getBlogPost(slug: string) {
 export async function generateMetadata({
 	params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-    const { slug } = params;
+    const { slug } = await params;
 	const post = await getBlogPost(slug);
 
 	if (!post) {
@@ -157,9 +157,9 @@ export async function generateMetadata({
 export default async function Page({
 	params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
-    const { slug } = params;
+    const { slug } = await params;
 
 	// Read the file content with gray-matter
 	const post = await getBlogPost(slug);
