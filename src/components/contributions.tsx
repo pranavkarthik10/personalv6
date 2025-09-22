@@ -62,7 +62,11 @@ export function Contributions({ data }: ContributionsProps) {
           )}
         </ContributionGraphCalendar>
         <ContributionGraphFooter>
-          <ContributionGraphTotalCount />
+          <ContributionGraphTotalCount>
+            {({ totalCount }) => (
+              <>{`${totalCount} activities in ${new Date().getFullYear()}`}</>
+            )}
+          </ContributionGraphTotalCount>
           <ContributionGraphLegend>
             {({ level }) => (
               <svg height={12} width={12}>
