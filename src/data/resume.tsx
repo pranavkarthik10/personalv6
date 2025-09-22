@@ -1,0 +1,196 @@
+import React from 'react';
+
+const RESUME = {
+	name: "Pranav Karthik",
+	avatar_path: "/me.jpg",
+	bio: {
+		intro: "Fourth year CS student at UBC passionate about building experiences for the web, mobile, and spatial interfaces.",
+		about: "TODO: move bio here",
+	},
+	experience: [
+		{
+			icon: (
+				<svg
+					aria-label="Vercel logomark"
+					height="64"
+					role="img"
+					viewBox="0 0 74 64"
+					style={{ width: "auto", overflow: "visible"}}
+				>
+					<path
+						d="M37.5896 0.25L74.5396 64.25H0.639648L37.5896 0.25Z"
+						fill="var(--foreground)"
+					/>
+				</svg>
+			),
+			company: "Vercel",
+			role: "Software Engineering Intern",
+			description: "",
+			start_date: "2025-09-01",
+			end_date: "2025-12-01",
+			location: "San Francisco, CA",
+			company_website: "https://vercel.com",
+		},
+		{
+			icon: (
+				<svg
+					aria-label="Google logomark"
+					height="64"
+					role="img"
+					viewBox="0 0 24 24"
+					style={{ width: "auto", overflow: "visible" }}
+				>
+					<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+					<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+					<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+					<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+				</svg>
+			),
+			company: "Google",
+			role: "Software Engineering Intern",
+			description: "",
+			start_date: "2025-05-01",
+			end_date: "2025-08-31",
+			location: "Mountain View, CA",
+			company_website: "https://google.com",
+		},
+		{
+			icon: (
+				<svg
+					aria-label="Google logomark"
+					height="64"
+					role="img"
+					viewBox="0 0 24 24"
+					style={{ width: "auto", overflow: "visible" }}
+				>
+					<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+					<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+					<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+					<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+				</svg>
+			),
+			company: "Google",
+			role: "STEP Intern",
+			description: "",
+			start_date: "2024-05-01",
+			end_date: "2024-08-31",
+			location: "Mountain View, CA",
+			company_website: "https://google.com",
+		},
+		{
+			icon: (
+				<img
+					src="/dyne.png"
+					alt="DYNE logo"
+					style={{ width: 64, height: 64, objectFit: "contain" }}
+				/>
+			),
+			company: "DYNE",
+			role: "App Development Intern",
+			description: "",
+			start_date: "2023-05-01",
+			end_date: "2023-08-31",
+			location: "Remote",
+			company_website: "https://dyne.com",
+		},
+	],
+	education: {
+		institution: "University of British Columbia",
+		degree: "Bachelor of Science",
+		major: "Computer Science",
+		start_year: "2022",
+		end_year: "2026",
+		location: "Vancouver, BC",
+		icon: (
+			<img
+				src="/ubc.png"
+				alt="UBC logo"
+				style={{ width: 64, height: 64, objectFit: "contain" }}
+			/>
+		),
+	},
+	projects: [
+		{
+			slug: "interconnected",
+			name: "Interconnected",
+			description:
+				"Interactive Swift application introducing graph theory algorithms with custom physics simulation and drag-and-drop graph playground.",
+			longDescription:
+				"Interconnected is an interactive Swift application that introduces graph theory algorithms through a custom physics simulation and drag-and-drop graph playground. Built with SwiftUI, CoreGraphics, and Combine, it provides an intuitive way to learn and experiment with graph algorithms through hands-on interaction.",
+			imagePath: "/projects/interconnected.png",
+			liveUrl: "https://github.com/pranavkarthik10/interconnected",
+			githubUrl: "https://github.com/pranavkarthik10/interconnected",
+			stack: ["SwiftUI", "CoreGraphics", "Combine"],
+			keyFeatures: [
+				"Custom physics simulation for graph visualization",
+				"Drag-and-drop graph playground",
+				"Interactive algorithm demonstrations",
+				"Real-time graph manipulation",
+			],
+			inProgress: false,
+			year: 2024,
+		},
+		{
+			slug: "travoai",
+			name: "TravoAI",
+			description:
+				"Full-stack web application for AI-generated travel plans with streaming responses and modern React UI.",
+			longDescription:
+				"TravoAI is a comprehensive travel planning platform that leverages AI to generate personalized travel itineraries. The application features streaming responses for real-time content generation, a modern React-based user interface, and intelligent recommendations based on user preferences and budget constraints.",
+			imagePath: "/projects/travoai.png",
+			liveUrl: "https://travoai.com",
+			githubUrl: "https://github.com/pranavkarthik10/travoai",
+			stack: ["React.js", "Node.js", "OpenAI API", "Express", "MongoDB"],
+			keyFeatures: [
+				"AI-powered travel plan generation",
+				"Streaming response implementation",
+				"Modern React UI with responsive design",
+				"Budget and preference-based recommendations",
+			],
+			inProgress: false,
+			year: 2023,
+		},
+		{
+			slug: "trackr",
+			name: "Trackr",
+			description:
+				"iOS app for assignment management with tens of thousands of App Store downloads and Siri integration.",
+			longDescription:
+				"Trackr is a comprehensive assignment management iOS application that has achieved tens of thousands of downloads on the App Store. The app features Siri integration for voice commands, CoreData for local storage, and a clean UIKit-based interface that helps students stay organized and on top of their academic responsibilities.",
+			imagePath: "/projects/trackr.png",
+			liveUrl: "https://apps.apple.com/app/trackr/id1481234567",
+			githubUrl: "https://github.com/pranavkarthik10/trackr",
+			stack: ["UIKit", "CoreData", "SiriKit", "Swift"],
+			keyFeatures: [
+				"Siri integration for voice commands",
+				"Assignment tracking and reminders",
+				"Grade calculation and analytics",
+				"Offline-first design with CoreData",
+			],
+			inProgress: false,
+			year: 2019,
+		},
+		{
+			slug: "personal-website",
+			name: "Personal Website",
+			description:
+				"Modern personal website built with Next.js, TypeScript, and Tailwind CSS featuring responsive design and dark mode.",
+			longDescription:
+				"This personal website showcases my portfolio and projects using modern web technologies. Built with Next.js, TypeScript, and Tailwind CSS, it features a responsive design, dark mode support, and optimized performance. The site includes interactive elements and smooth animations to create an engaging user experience.",
+			imagePath: "/projects/personal-website.png",
+			liveUrl: "https://pranavkarthik.dev",
+			githubUrl: "https://github.com/pranavkarthik10/personal-website",
+			stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+			keyFeatures: [
+				"Responsive design for all devices",
+				"Dark mode with smooth transitions",
+				"Optimized performance and SEO",
+				"Interactive animations and effects",
+			],
+			inProgress: false,
+			year: 2024,
+		},
+	],
+};
+
+export default RESUME;
