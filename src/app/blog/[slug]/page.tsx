@@ -213,7 +213,7 @@ export default async function Page({
 							</div>
 						)}
 					</header>
-					<div className="prose max-w-none">
+					<div className="prose dark:prose-invert max-w-none">
 						<MDXRemote
 							source={content}
 							components={{
