@@ -5,6 +5,8 @@ import {
 	Mail,
 	NotebookPen,
 	Newspaper,
+	Zap,
+	Laptop,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,6 +31,8 @@ interface Tab {
 const tabs: Tab[] = [
 	{ name: "home", icon: <House />, href: "/" },
 	{ name: "blog", icon: <NotebookPen />, href: "/blog" },
+	{ name: "stack", icon: <Laptop />, href: "/stack" },
+	// { name: "now", icon: <Zap />, href: "/now" },
 	{ name: "press", icon: <Newspaper />, href: "/press" },
 ];
 
