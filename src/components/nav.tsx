@@ -1,12 +1,10 @@
 "use client";
 
 import {
-	Camera,
-	FolderGit2,
 	House,
 	Mail,
 	NotebookPen,
-	Quote,
+	Newspaper,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -31,8 +29,7 @@ interface Tab {
 const tabs: Tab[] = [
 	{ name: "home", icon: <House />, href: "/" },
 	{ name: "blog", icon: <NotebookPen />, href: "/blog" },
-	{ name: "projects", icon: <FolderGit2 />, href: "/projects" },
-	{ name: "photos", icon: <Camera />, href: "/photos" },
+	{ name: "press", icon: <Newspaper />, href: "/press" },
 ];
 
 export default function Nav() {
@@ -44,14 +41,18 @@ export default function Nav() {
 	const tabRefs = useRef<(HTMLElement | null)[]>([]);
 
 	useEffect(() => {
-		preload("/api/photos", fetcher);
-
 		setHydrated(true);
 	}, []);
 
 	useEffect(() => {
-		const tab = tabs.find((tab) => pathname.includes(tab.name));
-		if (tab) setActiveTab(tab.name);
+    if (!pathname) return;
+    const matchedTab = tabs.find((tab) => {
+        if (tab.href === "/") {
+            return pathname === "/";
+        }
+        return pathname.startsWith(tab.href);
+    });
+    setActiveTab(matchedTab ? matchedTab.name : "");
 	}, [pathname]);
 
 	useEffect(() => {
@@ -73,9 +74,9 @@ export default function Nav() {
 
 	return (
 		<>
-			<div className="fixed left-0 bottom-0 w-full h-20 from-background via-background/75 to-transparent bg-gradient-to-t z-10" />
+			<div className="fixed left-0 bottom-0 w-full h-20 from-background via-background/75 to-transparent bg-gradient-to-t z-20" />
 			{hydrated && (
-				<nav className="fixed left-0 bottom-3 px-4 w-full flex justify-center z-10">
+				<nav className="fixed left-0 bottom-3 px-4 w-full flex justify-center z-30">
 					<TooltipProvider>
 						<div className="p-0.5 bg-background/75 shadow-xl rounded-lg border h-full flex justify-center max-w-xl backdrop-blur-sm">
 							<div
@@ -165,7 +166,7 @@ export default function Nav() {
 													asChild
 													className="text-muted-foreground opacity-75 hover:opacity-100 h-9 w-9"
 												>
-													<Link href="mailto:me@adriandlam.com">
+													<Link href="mailto:me@pranavkarthik.com">
 														<Mail />
 													</Link>
 												</Button>
@@ -175,18 +176,6 @@ export default function Nav() {
 											</TooltipContent>
 										</Tooltip>
 									</li>
-									{/* <li>
-						<Button
-							size="icon"
-							variant="ghost"
-							asChild
-							className="text-muted-foreground"
-						>
-							<Link href="https://x.com/adrianlam_dev" target="_blank">
-								<XIcon />
-							</Link>
-						</Button>
-					</li> */}
 									<li>
 										<Tooltip delayDuration={500}>
 											<TooltipTrigger asChild>
@@ -197,7 +186,7 @@ export default function Nav() {
 													className="text-muted-foreground opacity-75 hover:opacity-100 h-9 w-9"
 												>
 													<Link
-														href="https://www.github.com/adriandlam"
+														href="https://www.github.com/pranavkarthik10"
 														target="_blank"
 													>
 														<svg

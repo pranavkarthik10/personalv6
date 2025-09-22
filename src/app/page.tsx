@@ -36,6 +36,7 @@ export default async function Home() {
 
 	return (
 		<main>
+			<div className="mx-auto max-w-3xl px-4 md:px-6">
 			{/* Intro Section */}
 			<div className="flex items-center gap-6 border-y border-dashed p-8">
 				<img
@@ -205,6 +206,7 @@ export default async function Home() {
 				<p className=" mt-2 mb-6">
 				</p>
 			</div> */}
+			</div>
 		</main>
 	);
 }

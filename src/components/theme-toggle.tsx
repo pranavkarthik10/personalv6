@@ -2,9 +2,9 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Moon, Sun, Star } from "lucide-react";
+import { Moon, Sun, Sparkles } from "lucide-react";
 
-const THEMES = ["light", "dark"] as const;
+const THEMES = ["light", "dark", "starry"] as const;
 type ThemeName = typeof THEMES[number];
 
 export function ThemeToggle() {
@@ -23,8 +23,10 @@ export function ThemeToggle() {
 
   const icon = current === "light" ? (
     <Sun className="h-4 w-4" />
-  ) : (
+  ) : current === "dark" ? (
     <Moon className="h-4 w-4" />
+  ) : (
+    <Sparkles className="h-4 w-4" />
   );
 
   const label = `Switch theme (${current} → ${next})`;

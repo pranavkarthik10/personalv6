@@ -75,7 +75,43 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     
-    /* Dark mode gradients */
+    /* Standard dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-bg: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #0b0f19 100%);
+    --glow-primary: 0 0 30px rgba(102, 126, 234, 0.25);
+    --glow-secondary: 0 0 30px rgba(240, 147, 251, 0.25);
+    color-scheme: dark;
+  }
+  .starry {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 248 35% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 255 24% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 255 24% 18%;
+    /* Contribution intensity color (used by graph legend/blocks) */
+    --muted-foreground: 259 94% 77%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 255 20% 24%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    
+    /* Starry dark mode gradients */
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
@@ -84,7 +120,6 @@ body {
     --glow-secondary: 0 0 30px rgba(240, 147, 251, 0.4);
     color-scheme: dark;
   }
-  /* star theme removed */
 }
 
 @layer base {
@@ -93,5 +128,28 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    background-image: none;
+    background-attachment: scroll;
   }
+  .dark body {
+    background-image: none;
+    background-attachment: scroll;
+  }
+  .starry body {
+    background-image: linear-gradient(to bottom right, #0f172a, #4c1d95, #0f172a);
+    background-attachment: fixed;
+  }
+
+/* Starry-specific overrides for contribution graph colors */
+.starry .contrib-block[data-level='1'] { fill: hsl(var(--muted-foreground)/0.2) !important; }
+.starry .contrib-block[data-level='2'] { fill: hsl(var(--muted-foreground)/0.4) !important; }
+.starry .contrib-block[data-level='3'] { fill: hsl(var(--muted-foreground)/0.6) !important; }
+.starry .contrib-block[data-level='4'] { fill: hsl(var(--muted-foreground)/0.8) !important; }
+.starry .contrib-block:hover { outline: 0; box-shadow: 0 0 0 2px hsl(var(--muted-foreground)/0.5); }
+
+/* Starry overrides for contribution legend (Less → More) */
+.starry .fill-green-200 { fill: hsl(var(--muted-foreground)/0.2) !important; }
+.starry .fill-green-300 { fill: hsl(var(--muted-foreground)/0.4) !important; }
+.starry .fill-green-400 { fill: hsl(var(--muted-foreground)/0.6) !important; }
+.starry .fill-green-500 { fill: hsl(var(--muted-foreground)/0.8) !important; }
 }

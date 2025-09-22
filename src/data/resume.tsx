@@ -19,12 +19,12 @@ const RESUME = {
 				>
 					<path
 						d="M37.5896 0.25L74.5396 64.25H0.639648L37.5896 0.25Z"
-						fill="var(--foreground)"
+						fill="hsl(var(--foreground))"
 					/>
 				</svg>
 			),
 			company: "Vercel",
-			role: "Software Engineering Intern",
+			role: "Engineering Intern",
 			description: "",
 			start_date: "2025-09-01",
 			end_date: "2025-12-01",
@@ -51,7 +51,7 @@ const RESUME = {
 			description: "",
 			start_date: "2025-05-01",
 			end_date: "2025-08-31",
-			location: "Mountain View, CA",
+			location: "Seattle, WA",
 			company_website: "https://google.com",
 		},
 		{
@@ -74,7 +74,7 @@ const RESUME = {
 			description: "",
 			start_date: "2024-05-01",
 			end_date: "2024-08-31",
-			location: "Mountain View, CA",
+			location: "Waterloo, ON",
 			company_website: "https://google.com",
 		},
 		{
@@ -90,8 +90,8 @@ const RESUME = {
 			description: "",
 			start_date: "2023-05-01",
 			end_date: "2023-08-31",
-			location: "Remote",
-			company_website: "https://dyne.com",
+			location: "Vancouver, BC",
+			company_website: "https://dyneapp.ca",
 		},
 	],
 	education: {

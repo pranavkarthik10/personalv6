@@ -295,7 +295,7 @@ export const ContributionGraph = ({
       }}
     >
       <div
-        className={cn("flex w-max max-w-full flex-col gap-2", className)}
+        className={cn("flex w-full flex-col gap-2", className)}
         style={{ fontSize, ...style }}
         {...props}
       />
@@ -378,14 +378,13 @@ export const ContributionGraphCalendar = ({
 
   return (
     <div
-      className={cn("max-w-full overflow-x-auto overflow-y-hidden", className)}
+      className={cn("w-full", className)}
       {...props}
     >
       <svg
-        className="block overflow-visible"
-        height={height}
+        className="block overflow-visible w-full h-auto"
         viewBox={`0 0 ${width} ${height}`}
-        width={width}
+        preserveAspectRatio="xMidYMid meet"
       >
         <title>Contribution Graph</title>
         {!hideMonthLabels && (
