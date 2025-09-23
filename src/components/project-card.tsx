@@ -1,7 +1,9 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+"use client";
+
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Project {
   slug: string;
@@ -15,6 +17,13 @@ interface Project {
   keyFeatures?: string[];
   inProgress?: boolean;
   year: number;
+  challenges?: string;
+  collaborators?: {
+    name: string;
+    portfolio?: string;
+    twitter?: string;
+  }[];
+  awards?: string[];
 }
 
 interface ProjectCardProps {
@@ -23,56 +32,124 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between">
-          <CardTitle className="text-lg font-semibold group-hover:text-blue-600 transition-colors">
+    <Link
+      href={`/projects/${project.slug}`}
+      className="cursor-pointer group border rounded-xl overflow-hidden hover:bg-muted/50 transition-all duration-200 ease-in-out shadow-sm block"
+    >
+      <div className="p-4">
+        {/* Project Image */}
+        <div className="w-full h-48 overflow-hidden group-hover:brightness-100 transition-all brightness-65 rounded-lg ease-in-out duration-200 mb-4">
+          {project.imagePath ? (
+            <Image
+              src={project.imagePath}
+              alt={`${project.name} screenshot`}
+              width={400}
+              height={300}
+              className="w-full h-full object-cover object-top"
+            />
+          ) : (
+            <div className="w-full h-48 bg-muted flex justify-center items-center">
+              <ImageIcon className="w-10 h-10 text-muted-foreground" />
+            </div>
+          )}
+        </div>
+
+        {/* Project Header */}
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-lg font-semibold group-hover:text-blue-600 transition-colors">
             {project.name}
-          </CardTitle>
-          <div className="flex gap-2">
-            {project.githubUrl && (
-              <Link
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-gray-100 rounded"
-              >
-                <Github className="h-4 w-4" />
-              </Link>
-            )}
-            {project.liveUrl && (
-              <Link
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-gray-100 rounded"
-              >
-                <ExternalLink className="h-4 w-4" />
-              </Link>
+          </h3>
+          <div className="flex items-center gap-2">
+            <Badge variant="secondary" className="text-xs">{project.year}</Badge>
+            {project.inProgress && (
+              <Badge variant="outline" className="text-xs text-yellow-700 border-yellow-300 bg-yellow-50">
+                In Progress
+              </Badge>
             )}
           </div>
         </div>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <span>{project.year}</span>
-          {project.inProgress && (
-            <Badge variant="outline" className="text-xs">
-              In Progress
-            </Badge>
-          )}
-        </div>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed mb-4">
+
+        {/* Project Description */}
+        <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
           {project.description}
-        </CardDescription>
-        <div className="flex flex-wrap gap-1.5">
-          {project.stack.map((tech) => (
+        </p>
+
+        {/* Awards */}
+        {/* {project.awards && project.awards.length > 0 && (
+          <div className="mb-3">
+            <div className="flex flex-wrap gap-1.5">
+              {project.awards.slice(0, 1).map((award) => (
+                <Badge key={award} variant="outline" className="text-xs text-amber-700 border-amber-300 bg-amber-50">
+                  🏆 {award}
+                </Badge>
+              ))}
+              {project.awards.length > 1 && (
+                <Badge variant="outline" className="text-xs text-muted-foreground">
+                  +{project.awards.length - 1} more
+                </Badge>
+              )}
+            </div>
+          </div>
+        )} */}
+
+        {/* Collaborators */}
+        {/* {project.collaborators && project.collaborators.length > 0 && (
+          <div className="mb-3">
+            <div className="text-xs text-muted-foreground">
+              With: {project.collaborators.slice(0, 2).map(c => c.name).join(", ")}
+              {project.collaborators.length > 2 && ` +${project.collaborators.length - 2} more`}
+            </div>
+          </div>
+        )} */}
+        
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {project.stack.slice(0, 4).map((tech) => (
             <Badge key={tech} variant="secondary" className="text-xs">
               {tech}
             </Badge>
           ))}
+          {project.stack.length > 4 && (
+            <Badge variant="secondary" className="text-xs text-muted-foreground">
+              +{project.stack.length - 4}
+            </Badge>
+          )}
         </div>
-      </CardContent>
-    </Card>
+
+        {/* Action Links */}
+        {(project.githubUrl || project.liveUrl) && (
+          <div className="flex justify-end pt-2 border-t">
+            <div className="flex gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity">
+              {project.githubUrl && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
+                  }}
+                  className="p-1 hover:bg-gray-100 rounded transition-colors"
+                  title="View on GitHub"
+                >
+                  <Github className="h-4 w-4 text-muted-foreground hover:text-foreground" />
+                </button>
+              )}
+              {project.liveUrl && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
+                  }}
+                  className="p-1 hover:bg-gray-100 rounded transition-colors"
+                  title="Visit"
+                >
+                  <ExternalLink className="h-4 w-4 text-muted-foreground hover:text-foreground" />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </Link>
   );
 }

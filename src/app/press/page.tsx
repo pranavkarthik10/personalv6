@@ -24,7 +24,7 @@ export default function Press() {
         {/* Back button */}
         <Link 
           href="/"
-          className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-105 bg-black/5 text-slate-700 dark:bg-white/10 dark:text-white border-slate-200 dark:border-white/20 hover:bg-black/10 dark:hover:bg-white/20"
+          className={`inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-105 ${effectiveIsDark ? 'bg-white/10 text-white border-white/20 hover:bg-white/20' : 'bg-black/5 text-slate-700 border-slate-200 hover:bg-black/10'}`}
         >
           <ArrowLeft size={16} />
           <span className="font-medium">Back</span>
@@ -32,17 +32,17 @@ export default function Press() {
 
         {/* Header */}
         <header className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-black dark:text-white">
+          <h1 className={`text-5xl md:text-6xl font-bold mb-4 ${effectiveIsDark ? 'text-white' : 'text-slate-800'}`}>
             Press/Media
           </h1>
-          <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300">
+          <p className={`text-xl md:text-2xl ${effectiveIsDark ? 'text-slate-300' : 'text-slate-700'}`}>
             Where I&apos;ve been featured on so far.
           </p>
         </header>
 
         {/* Media logos table */}
         <section className="mb-16">
-          <div className="p-8 rounded-2xl backdrop-blur-md border bg-white/50 dark:bg-white/5 border-white/20 dark:border-white/10">
+          <div className="p-8 rounded-2xl backdrop-blur-md border bg-white/50 dark:bg-white/50 border-white/20 dark:border-white/20">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <tbody>
