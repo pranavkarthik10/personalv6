@@ -118,8 +118,8 @@ const RESUME = {
 			longDescription:
 				"Interconnected is an interactive Swift application that introduces graph theory algorithms through a custom physics simulation and drag-and-drop graph playground. Built with SwiftUI, CoreGraphics, and Combine, it provides an intuitive way to learn and experiment with graph algorithms through hands-on interaction.",
 			imagePath: "/interconnected.png",
-			liveUrl: "https://github.com/pranavkarthik10/interconnected",
-			githubUrl: "https://github.com/pranavkarthik10/interconnected",
+			// liveUrl: "https://github.com/pranavkarthik10/interconnected",
+			// githubUrl: "https://github.com/pranavkarthik10/interconnected",
 			stack: ["SwiftUI", "CoreGraphics", "Combine"],
 			keyFeatures: [
 				"Custom physics simulation for graph visualization",
