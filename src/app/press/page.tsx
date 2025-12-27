@@ -54,8 +54,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" 
+                        <img
+                          src="/press-logos/omni-tv.png"
                           alt="OMNI" 
                           className="mx-auto"
                           style={{width: '200px', height: '81px'}}
@@ -69,8 +69,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://static.themebuilder.aws.arc.pub/bellmediainc/1730923620658.svg" 
+                        <img
+                          src="/press-logos/ctv.svg"
                           alt="CTVNews" 
                           className="mx-auto"
                           style={{width: '200px', height: '32px'}}
@@ -78,15 +78,15 @@ export default function Press() {
                       </a>
                     </td>
                     <td className="p-4 text-center">
-                      <a 
-                        href="https://dailyhive.com/vancouver/apple-wwdc20-conference-winners"
+                      <a
+                        href="https://www.journaldemontreal.com/a-13-ans-ce-developpeur-canadien-attire-lattention-dapple"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://assets.dailyhive.com/assets/2.1.1/static/svg/logos/venture-logo.svg" 
-                          alt="VentureVan" 
+                        <img
+                          src="/press-logos/journal-de-montreal.svg"
+                          alt="Journal de Montreal"
                           className="mx-auto"
                           style={{width: '200px', height: '52px'}}
                         />
@@ -101,8 +101,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://cdn-ladpd.nitrocdn.com/xgHTFPcYUVXJVMRxhskpKxBqXOHxVKLi/assets/images/optimized/rev-00bc96e/viewthevibe.com/wp-content/uploads/2022/03/ViewtheVIBE_logotype_RASBS_K_reduced.png" 
+                        <img
+                          src="/press-logos/view-the-vibe.png"
                           alt="ViewTheVibe" 
                           className="mx-auto"
                           style={{width: '200px', height: '50px'}}
@@ -116,8 +116,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://mobilesyrup.com/wp-content/themes/mobilesyrup2021/images/ms-logo.svg" 
+                        <img
+                          src="/press-logos/mobile-syrup.svg"
                           alt="MobileSyrup" 
                           className="mx-auto"
                           style={{width: '200px', height: '34px'}}
@@ -131,8 +131,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/CityNews_1130_Logo.svg/2560px-CityNews_1130_Logo.svg.png" 
+                        <img
+                          src="/press-logos/citynews.png"
                           alt="News1130" 
                           className="mx-auto"
                           style={{width: '200px', height: '78px'}}
@@ -148,8 +148,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="http://owlconnected.com/wp-content/uploads/2016/03/owlconnected-1.png" 
+                        <img
+                          src="/press-logos/owl-connected.png"
                           alt="OwlConnected" 
                           className="mx-auto"
                           style={{width: '200px', height: '34px'}}
@@ -163,8 +163,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://cdn.geekwire.com/wp-content/uploads/2015/02/GeekWire-logo-transparent.png" 
+                        <img
+                          src="/press-logos/geekwire.png"
                           alt="GeekWire" 
                           className="mx-auto"
                           style={{width: '200px', height: '45px'}}
@@ -178,8 +178,8 @@ export default function Press() {
                         rel="noopener noreferrer"
                         className="block transition-transform hover:scale-105"
                       >
-                        <img 
-                          src="https://assets.dailyhive.com/assets/2.3.0/static/svg/logos/dailyhive-logo.svg" 
+                        <img
+                          src="/press-logos/daily-hive.svg"
                           alt="DH" 
                           className="mx-auto"
                           style={{width: '200px', height: '50px'}}

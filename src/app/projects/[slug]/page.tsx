@@ -135,6 +135,21 @@ export default async function ProjectPage({
 						</section>
 					)}
 
+					{project.featuredLink && (
+						<section className="border rounded-md p-4 shadow-sm bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20">
+							<h3 className="text-lg mb-3">Featured</h3>
+							<Link
+								href={project.featuredLink.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+							>
+								<ExternalLink size={14} />
+								{project.featuredLink.label}
+							</Link>
+						</section>
+					)}
+
 					<section className="border rounded-md p-4 shadow-sm">
 						<h3 className="text-lg mb-3">Tech Stack</h3>
 						<div className="flex flex-wrap gap-2">

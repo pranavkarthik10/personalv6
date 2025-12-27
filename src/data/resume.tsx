@@ -111,6 +111,35 @@ const RESUME = {
 	},
 	projects: [
 		{
+			slug: "grokhunt",
+			name: "GrokHunt",
+			description:
+				"AI-powered recruiting platform that autonomously searches for talented developers using Grok's reasoning engine.",
+			longDescription:
+				"GrokHunt is an autonomous recruiting platform built at the xAI Hackathon 2025. It scans Twitter for talented developers, evaluates their work using Grok's reasoning engine, generates candidate scores and narratives, and sends personalized interview invitations. The system uses reinforcement learning to continuously improve its accuracy.",
+			imagePath: "/grokhunt.png",
+			liveUrl: "https://devpost.com/software/grokhunt",
+			stack: ["Next.js", "Python", "FastAPI", "LLMs", "X API"],
+			keyFeatures: [
+				"Autonomous candidate discovery from Twitter",
+				"AI-powered evaluation using Grok's reasoning",
+				"Personalized outreach and interview invitations",
+				"Reinforcement learning feedback loop",
+			],
+			challenges: "Built a complete autonomous recruiting pipeline in under 48 hours that searches, scores, messages, and interviews candidates automatically. Demonstrated that reasoning-based evaluation outperforms traditional keyword matching.",
+			collaborators: [
+				{ name: "Pragalvha Sharma" },
+				{ name: "Krishna Arya" },
+			],
+			awards: ["Featured by xAI"],
+			featuredLink: {
+				label: "Featured by xAI",
+				url: "https://x.com/xai/status/1997875261669621787",
+			},
+			inProgress: false,
+			year: 2025,
+		},
+		{
 			slug: "interconnected",
 			name: "Interconnected",
 			description:
